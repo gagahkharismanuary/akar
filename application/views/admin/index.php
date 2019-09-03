@@ -11,7 +11,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Login</title>
+  <title>Akar Admin - Login</title>
 
   <!-- Custom fonts for this template-->
  
@@ -26,7 +26,7 @@
 <body class="bg-gradient-primary">
 
   <div class="container vh-100">
-
+ 
     <!-- Outer Row -->
     <div class="row h-100 align-items-center justify-content-center">
 
@@ -41,16 +41,43 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                   </div>
-                  <form class="user">
+                  <div style="color: red;margin-bottom: 15px;">
+                    <?php
+                    // Cek apakah terdapat session nama message
+                    if($this->session->flashdata('message')){ // Jika ada
+                      echo $this->session->flashdata('message'); // Tampilkan pesannya
+                    }
+                    ?>
+                  </div>
+                  <form 
+                    class="user"
+                    method="post" 
+                    action="<?php echo admin_url('login') ?>"
+                  >
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                      <input 
+                        type="email" 
+                        class="form-control form-control-user" 
+                        id="exampleInputEmail" 
+                        aria-describedby="emailHelp" 
+                        placeholder="Enter Email Address..."
+                        name="username"
+                      >
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                      <input 
+                        type="password" 
+                        class="form-control form-control-user" 
+                        id="exampleInputPassword"
+                         placeholder="Password"
+                         name="password"
+                      >
                     </div>
-                    <a href="index.html" class="btn btn-primary btn-user btn-block">
+                    <button 
+                      type="submit" 
+                      class="btn btn-primary btn-user btn-block">
                       Login
-                    </a>
+                  </button>
                   </form>
                 </div>
               </div>
