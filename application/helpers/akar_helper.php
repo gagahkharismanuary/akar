@@ -11,4 +11,9 @@ function assets_url($path){
 function admin_url($path){
 	return 'http://localhost/akar/admin/'.$path;
 }
+
+function akar_url($path){
+	return 'http://localhost/akar/'.$path;
+}
+
 ?>

@@ -11,7 +11,7 @@ class Admin extends CI_Controller {
 
   public function index(){
     if($this->session->userdata('authenticated')) // Jika user sudah login (Session authenticated ditemukan)
-      redirect('Success'); // Redirect ke page welcome
+      redirect('dashboard'); // Redirect ke page welcome
 
       $this->load->view('admin/index'); // Load view login.php
   }
@@ -34,7 +34,7 @@ class Admin extends CI_Controller {
         );
         
         $this->session->set_userdata($session); // Buat session sesuai $session
-        redirect('Success'); // Redirect ke halaman welcome
+        redirect('dashboard'); // Redirect ke halaman welcome
       }else{
         $this->session->set_flashdata('message', 'Password salah'); // Buat session flashdata
         redirect('admin'); // Redirect ke halaman login
