@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller {
+class Projects extends CI_Controller {
     
 	/**
 	 * Index Page for this controller.
@@ -20,24 +20,20 @@ class Dashboard extends CI_Controller {
 	 */
       public function __construct(){
         parent::__construct();
-        // Cek apakah terdapat session dengan nama authenticated
-        if(! $this->session->userdata('authenticated')) // Jika tidak ada
-            redirect('admin'); // Redirect ke halaman login
+			
+				$this->load->helper('url');	
+				$this->load->model('m_data');
+				// Cek apakah terdapat session dengan nama authenticated
+        if(! $this->session->userdata('authenticated')) {
+					// Jika tidak ada
+						redirect('admin'); // Redirect ke halaman login
+				}
+						
+			
     }
 	public function index()
 	{
-		$this->load->view('admin/dashboard');
-	}
-
-	public function blank() {
-		$this->load->view('blank');	
-	}
-
-	public function table() {
-		$this->load->view('table');	
-	}
-
-	public function project() {
-		$this->load->view('projects');	
+		$data['project'] = $this->m_data->get_projects()->result();
+		$this->load->view('admin/projects', $data);
 	}
 }
