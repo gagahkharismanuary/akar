@@ -16,4 +16,8 @@ function akar_url($path){
 	return 'http://localhost/akar/'.$path;
 }
 
+function projects_url($path){
+	return 'http://localhost/akar/projects/'.$path;
+}
+
 ?>

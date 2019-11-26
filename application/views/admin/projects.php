@@ -343,7 +343,10 @@
       <!-- DataTales Example -->
       <div class="card shadow mb-4">
         <div class="card-header py-3 text-right">
-          <a href="#" class="btn btn-primary">
+          <a 
+            href=<?php echo projects_url('add') ?> 
+            class="btn btn-primary"
+          >
             <i class="fas fa-plus"></i> 
             Add Project
           </a>
@@ -355,6 +358,8 @@
                 <tr>
                   <th>Title</th>
                   <th>Price From</th>
+                  <th>Image</th>
+                  <th>category</category>
               </thead>
               
               <tbody>
@@ -362,6 +367,14 @@
                 <tr>
                   <td><?php echo $p->title ?></td>
                   <td><?php echo $p->price_from ?></td>
+                  <td class="text-center">
+                    <img 
+                      src=<?php echo $p->image ?> 
+                      alt=""
+                      style="width: 200px"
+                    >
+                  </td>
+                  <td><?php echo $p->category_name ?></td>
                 </tr>
               <?php } ?>
               </tbody>
