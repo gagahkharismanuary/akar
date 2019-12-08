@@ -7,11 +7,11 @@
 	<table cellpadding="8">
 		<tr>
 			<td>Deskripsi</td>
-			<td><input type="text" name="input_deskripsi" value="<?php echo set_value('input_deskripsi'); ?>"></td>
+			<td><input type="text" name="title" value="<?php echo set_value('title'); ?>"></td>
 		</tr>
 		<tr>
 			<td>Gambar</td>
-			<td><input type="file" name="input_gambar"></td>
+			<td><input type="file" name="image_upload"></td>
 		</tr>
 	</table>
 		

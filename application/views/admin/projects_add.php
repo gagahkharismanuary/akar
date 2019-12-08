@@ -385,8 +385,8 @@
                           <input 
                             type="file" 
                             class="custom-file-upload form-control-file" 
-                            id="image" 
-                            name="image"
+                            id="image_upload" 
+                            name="image_upload"
                             size="33"
                           >
                           <!-- <input type="file" name="berkas" /> -->

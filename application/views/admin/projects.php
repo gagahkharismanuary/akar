@@ -369,7 +369,7 @@
                   <td><?php echo $p->price_from ?></td>
                   <td class="text-center">
                     <img 
-                      src=<?php echo $p->image ?> 
+                      src=<?php echo base_url("assets/img/".$p->image) ?>
                       alt=""
                       style="width: 200px"
                     >

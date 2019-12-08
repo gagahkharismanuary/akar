@@ -30,7 +30,7 @@ class Gambar extends CI_Controller {
 			}
     }
     
-    var_dump($data);
+    // var_dump($data);
 		
 		$this->load->view('gambar/form', $data);
 	}
