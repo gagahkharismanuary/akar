@@ -350,7 +350,7 @@
                     <form 
                       id="submit" 
                       class="user" 
-                      action="<?php echo base_url(). 'projects/add_action' ?>"
+                      action="<?php echo base_url(). 'projects/edit_action' ?>"
                       method='post'
                       enctype="multipart/form-data"
                     >
@@ -361,6 +361,7 @@
                           id="title" 
                           name="title"
                           placeholder="Projects Title"
+                          value="<?php echo $projects->title; ?>"
                         >
                       </div>
                       <div class="form-group 12">
@@ -370,8 +371,10 @@
                             id="pricefrom" 
                             name="price_from"
                             placeholder="Price From"
+                            value="<?php echo $projects->price_from; ?>"
                           >
                       </div>
+                      
                       <div class="form-group 12">
                         <label for="file-upload" class="custom-file-upload">
                           Upload Image
@@ -382,11 +385,11 @@
                             id="image_upload" 
                             name="image_upload"
                             size="33"
+                            value="<?php echo base_url("assets/img/".$projects->image) ?>" 
                           >
-                          <!-- <input type="file" name="berkas" /> -->
                       </div>
                       <div class="form-group 12">
-                        <select class="form-control" name="category_id">
+                      <select class="form-control" name="category_id">
                           <?php 
                             foreach($category as $c)
                             { 

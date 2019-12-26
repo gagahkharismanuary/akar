@@ -360,6 +360,7 @@
                   <th>Price From</th>
                   <th>Image</th>
                   <th>category</category>
+                  <th>Action</category>
               </thead>
               
               <tbody>
@@ -375,6 +376,16 @@
                     >
                   </td>
                   <td><?php echo $p->category_name ?></td>
+                  <td>
+                    <a 
+                      href=<?php echo projects_url('edit/').$p->projects_id ?> 
+                    >
+                      <button class="btn-info">
+                      <i class="fas fa-edit"></i> 
+                        Edit
+                      </button>
+                    </a>
+                  </td>
                 </tr>
               <?php } ?>
               </tbody>

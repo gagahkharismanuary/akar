@@ -40,15 +40,6 @@ class Projects extends CI_Controller {
 
 	public function add()
 	{
-			// $product = $this->product_model;
-			// $validation = $this->form_validation;
-			// $validation->set_rules($product->rules());
-
-			// if ($validation->run()) {
-			// 		$product->save();
-			// 		$this->session->set_flashdata('success', 'Berhasil disimpan');
-			// }
-
 			$data['category'] = $this->m_data->getAllCategory()->result();
 			$this->load->view("admin/projects_add", $data);
 	}
@@ -76,5 +67,12 @@ class Projects extends CI_Controller {
 
 		$this->m_data->input_data($data, 'projects');
 		redirect('projects');
+	}
+
+	public function edit_action($id)  {
+	 $data['projects'] = $this->m_data->getProjectDetail($id)->row();
+	 $data['category'] = $this->m_data->getAllCategory()->result();
+     
+     $this->load->view('admin/projects_edit', $data);
 	}
 }
