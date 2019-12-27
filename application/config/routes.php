@@ -55,4 +55,4 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['contacts'] = 'contacts';
 
-$route['projects/edit/(:num)'] = 'projects/edit_action/$1';
+$route['projects/edit/(:num)'] = 'projects/edit/$1';

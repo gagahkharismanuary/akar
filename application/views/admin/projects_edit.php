@@ -332,7 +332,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Add Projects</h1>
+          <h1 class="h3 mb-4 text-gray-800">Edit Projects</h1>
           <!-- <form 
             method="post" 
             action="<?=base_url('store-image')?>" 
@@ -350,10 +350,11 @@
                     <form 
                       id="submit" 
                       class="user" 
-                      action="<?php echo base_url(). 'projects/edit_action' ?>"
+                      action="<?php echo base_url(). 'projects/update' ?>"
                       method='post'
                       enctype="multipart/form-data"
                     >
+                    <input type="hidden" name="projects_id" value="<?php echo $projects->projects_id ?>">
                       <div class="form-group">
                         <input 
                           type="text" 

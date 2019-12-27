@@ -69,10 +69,40 @@ class Projects extends CI_Controller {
 		redirect('projects');
 	}
 
-	public function edit_action($id)  {
-	 $data['projects'] = $this->m_data->getProjectDetail($id)->row();
-	 $data['category'] = $this->m_data->getAllCategory()->result();
-     
-     $this->load->view('admin/projects_edit', $data);
+	public function edit($id)  {
+		$data['projects'] = $this->m_data->getProjectDetail($id)->row();
+		$data['category'] = $this->m_data->getAllCategory()->result();
+		
+		$this->load->view('admin/projects_edit', $data);
+	}
+
+	public function update(){
+		
+		$upload = $this->GambarModel->upload();
+
+		$id = $this->input->post('projects_id');
+		$title = $this->input->post('title');
+		$price_from = $this->input->post('price_from');
+		$category_id = $this->input->post('category_id');
+
+			if($upload['result'] == "success"){ // Jika proses upload sukses		
+				$this->GambarModel->save($upload);
+			}else{ // Jika proses upload gagal
+				$data['message'] = $upload['error'];
+			}
+
+    	$data = array(
+				'title' => $title,
+				'price_from' => $price_from,
+				'category_id' => $category_id,
+				'image' => $upload['file']['file_name'],
+			);
+	
+		$where = array(
+			'projects_id' => $id
+		);
+	
+		$this->m_data->update_data($where,$data,'projects');
+		redirect('projects');
 	}
 }
