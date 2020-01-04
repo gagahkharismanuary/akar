@@ -48,7 +48,7 @@
         </div>
       </li> -->
 
-     <!-- Nav Products -->
+      <!-- Nav Products -->
       <li class="nav-item">
         <a 
           class="nav-link" 
@@ -84,8 +84,8 @@
       <!-- Main Content -->
       <div id="content">
 
-        <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+         <!-- Topbar -->
+         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -93,48 +93,48 @@
           </button>
 
           <!-- Topbar Navbar -->
-          <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto">
 
-            <div class="topbar-divider d-none d-sm-block"></div>
+              <div class="topbar-divider d-none d-sm-block"></div>
 
-            <!-- Nav Item - User Information -->
-            <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"> <?php echo $this->session->userdata('nama'); ?></span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
-              </a>
-              <!-- Dropdown - User Information -->
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <!-- <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
+              <!-- Nav Item - User Information -->
+              <li class="nav-item dropdown no-arrow">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="mr-2 d-none d-lg-inline text-gray-600 small"> <?php echo $this->session->userdata('nama'); ?></span>
+                  <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
                 </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
-                </a> -->
-                <!-- <div class="dropdown-divider"></div> -->
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
-                </a>
-              </div>
-            </li>
+                <!-- Dropdown - User Information -->
+                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                  <!-- <a class="dropdown-item" href="#">
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Profile
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Settings
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Activity Log
+                  </a> -->
+                  <!-- <div class="dropdown-divider"></div> -->
+                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Logout
+                  </a>
+                </div>
+              </li>
 
-          </ul>
+            </ul>
 
-        </nav>
-        <!-- End of Topbar -->
+          </nav>
+          <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Add Projects</h1>
+          <h1 class="h3 mb-4 text-gray-800">Edit Products</h1>
           <!-- <form 
             method="post" 
             action="<?=base_url('store-image')?>" 
@@ -152,18 +152,31 @@
                     <form 
                       id="submit" 
                       class="user" 
-                      action="<?php echo base_url(). 'projects/add_action' ?>"
+                      action="<?php echo base_url(). 'products/update' ?>"
                       method='post'
                       enctype="multipart/form-data"
                     >
+                    <input type="hidden" name="product_id" value="<?php echo $products->product_id ?>">
                       <div class="form-group">
                         <input 
                           type="text" 
                           class="form-control form-control-user" 
                           id="title" 
                           name="title"
-                          placeholder="Projects Title"
+                          placeholder="Products Title"
+                          value="<?php echo $products->title; ?>"
                         >
+                      </div>
+                      <div class="form-group">
+                        <textarea 
+                          type="text"
+                          class="form-control bg-white small" 
+                          id="description" 
+                          name="description"
+                          placeholder="Description..."
+                          
+                          aria-label="Description"
+                          aria-describedby="basic-addon2"><?php echo $products->description; ?></textarea>
                       </div>
                       <div class="form-group 12">
                           <input 
@@ -172,8 +185,10 @@
                             id="pricefrom" 
                             name="price_from"
                             placeholder="Price From"
+                            value="<?php echo $products->price_from; ?>"
                           >
                       </div>
+                      
                       <div class="form-group 12">
                         <label for="file-upload" class="custom-file-upload">
                           Upload Image
@@ -184,11 +199,11 @@
                             id="image_upload" 
                             name="image_upload"
                             size="33"
+                            value="<?php echo base_url("assets/img/".$products->image) ?>" 
                           >
-                          <!-- <input type="file" name="berkas" /> -->
                       </div>
                       <div class="form-group 12">
-                        <select class="form-control" name="category_id">
+                      <select class="form-control" name="category_id">
                           <?php 
                             foreach($category as $c)
                             { 

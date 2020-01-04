@@ -48,13 +48,22 @@
         </div>
       </li> -->
 
+      <!-- Nav Products -->
+      <li class="nav-item">
+        <a 
+          class="nav-link" 
+          href="<?php echo akar_url('products') ?>"
+        >
+          <i class="fas fa-fw fa-images"></i>
+          <span>Products</span></a>
+      </li>
       <!-- Nav Projects -->
       <li class="nav-item">
         <a 
           class="nav-link" 
           href="<?php echo akar_url('projects') ?>"
         >
-          <i class="fas fa-fw fa-images"></i>
+          <i class="fas fa-fw fa-folder-open"></i>
           <span>Projects</span></a>
       </li>
 

@@ -134,7 +134,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Add Projects</h1>
+          <h1 class="h3 mb-4 text-gray-800">Add Products</h1>
           <!-- <form 
             method="post" 
             action="<?=base_url('store-image')?>" 
@@ -152,7 +152,7 @@
                     <form 
                       id="submit" 
                       class="user" 
-                      action="<?php echo base_url(). 'projects/add_action' ?>"
+                      action="<?php echo base_url(). 'products/add_action' ?>"
                       method='post'
                       enctype="multipart/form-data"
                     >
@@ -162,8 +162,18 @@
                           class="form-control form-control-user" 
                           id="title" 
                           name="title"
-                          placeholder="Projects Title"
+                          placeholder="Products Title"
                         >
+                      </div>
+                      <div class="form-group">
+                        <textarea 
+                          type="text"
+                          class="form-control bg-white small" 
+                          id="description" 
+                          name="description"
+                          placeholder="Description..."
+                          aria-label="Description"
+                          aria-describedby="basic-addon2"></textarea>
                       </div>
                       <div class="form-group 12">
                           <input 
