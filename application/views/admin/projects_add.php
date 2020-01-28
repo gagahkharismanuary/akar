@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Welcome Page</title>
+  <title>Add Project</title>
   <link href="<?php echo assets_url('vendor/fontawesome-free/css/all.min.css')?>" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
@@ -47,6 +47,17 @@
           </div>
         </div>
       </li> -->
+
+      <!-- Nav Clients -->
+    <li class="nav-item">
+        <a 
+          class="nav-link" 
+          href="<?php echo akar_url('clients') ?>"
+        >
+          <i class="fas fa-fw fa-handshake"></i>
+          <span>Clients</span></a>
+      </li>
+
 
      <!-- Nav Products -->
       <li class="nav-item">
@@ -199,10 +210,10 @@
                       </div>
                         <button 
                           class="btn btn-success"
-                          id="btn_upload" 
+                          id="btn_submit" 
                           type="submit"
                         >
-                        Upload
+                        Submit
                       </button>
                     </form>
                   </div>

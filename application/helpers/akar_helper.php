@@ -22,5 +22,8 @@ function projects_url($path){
 function products_url($path){
 	return 'http://localhost/akar/products/'.$path;
 }
+function clients_url($path){
+	return 'http://localhost/akar/clients/'.$path;
+}
 
 ?>

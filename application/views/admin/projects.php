@@ -49,6 +49,16 @@
   </div>
 </li> -->
 
+<!-- Nav Clients -->
+<li class="nav-item">
+    <a 
+      class="nav-link" 
+      href="<?php echo akar_url('clients') ?>"
+    >
+      <i class="fas fa-fw fa-handshake"></i>
+      <span>Clients</span></a>
+  </li>
+
 <!-- Nav Products -->
 <li class="nav-item">
   <a 

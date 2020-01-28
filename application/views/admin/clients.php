@@ -1,7 +1,7 @@
 
 <html>
 <head>
-  <title>Products</title>
+  <title>Clients</title>
   <link href="<?php echo assets_url('vendor/fontawesome-free/css/all.min.css')?>" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
@@ -144,17 +144,17 @@
     <div class="container-fluid">
 
       <!-- Page Heading -->
-      <h1 class="h3 mb-2 text-gray-800">Products</h1>
+      <h1 class="h3 mb-2 text-gray-800">Clients</h1>
 
       <!-- DataTales Example -->
       <div class="card shadow mb-4">
         <div class="card-header py-3 text-right">
           <a 
-            href=<?php echo products_url('add') ?> 
+            href=<?php echo clients_url('add') ?> 
             class="btn btn-primary"
           >
             <i class="fas fa-plus"></i> 
-            Add Products
+            Add Client
           </a>
         </div>
         <div class="card-body">
@@ -162,40 +162,32 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
-                  <th>Title</th>
+                  <th>Nama Client</th>
+                  <th>Email</th>
+                  <th>Phone Number</th>
                   <th>Description</th>
-                  <th>Price From</th>
-                  <th>Image</th>
-                  <th>category</category>
-                  <th>Action</category>
+                  <th>Action</th>
               </thead>
               
               <tbody>
-              <?php foreach($products as $p){ ?>
+              <?php foreach($clients as $c){ ?>
                 <tr>
-                  <td><?php echo $p->title ?></td>
-                  <td><?php echo $p->description ?></td>
-                  <td><?php echo $p->price_from ?></td>
-                  <td class="text-center">
-                    <img 
-                      src=<?php echo base_url("assets/img/".$p->image) ?>
-                      alt=""
-                      style="width: 200px"
-                    >
-                  </td>
-                  <td><?php echo $p->category_name ?></td>
-                  <td>
-                    <a 
-                      href=<?php echo products_url('edit/').$p->product_id ?> 
-                    >
-                      <button class="btn-info">
-                      <i class="fas fa-edit"></i> 
-                        Edit
-                      </button>
-                    </a>
-                  </td>
+                    <td><?php echo $c->name ?></td>
+                    <td><?php echo $c->email ?></td>
+                    <td><?php echo $c->phone_number ?></td>
+                    <td><?php echo $c->description ?></td>
+                    <td>
+                        <a 
+                        href=<?php echo clients_url('edit/').$c->id ?> 
+                        >
+                        <button class="btn-info">
+                        <i class="fas fa-edit"></i> 
+                            Edit
+                        </button>
+                        </a>
+                    </td>
                 </tr>
-              <?php } ?>
+                <?php } ?>
               </tbody>
             </table>
           </div>

@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Edit Product</title>
+  <title>Edit Client</title>
   <link href="<?php echo assets_url('vendor/fontawesome-free/css/all.min.css')?>" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
@@ -145,7 +145,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Edit Products</h1>
+          <h1 class="h3 mb-4 text-gray-800">Edit Client</h1>
           <!-- <form 
             method="post" 
             action="<?=base_url('store-image')?>" 
@@ -163,19 +163,39 @@
                     <form 
                       id="submit" 
                       class="user" 
-                      action="<?php echo base_url(). 'products/update' ?>"
+                      action="<?php echo base_url(). 'clients/update' ?>"
                       method='post'
                       enctype="multipart/form-data"
                     >
-                    <input type="hidden" name="product_id" value="<?php echo $products->product_id ?>">
+                    <input type="hidden" name="id" value="<?php echo $clients->id ?>">
                       <div class="form-group">
                         <input 
                           type="text" 
                           class="form-control form-control-user" 
-                          id="title" 
-                          name="title"
-                          placeholder="Products Title"
-                          value="<?php echo $products->title; ?>"
+                          id="name" 
+                          name="name"
+                          placeholder="Client Name"
+                          value="<?php echo $clients->name; ?>"
+                        >
+                      </div>
+                      <div class="form-group">
+                        <input 
+                          type="text" 
+                          class="form-control form-control-user" 
+                          id="email" 
+                          name="email"
+                          placeholder="Email"
+                          value="<?php echo $clients->email; ?>"
+                        >
+                      </div>
+                      <div class="form-group">
+                        <input 
+                          type="text" 
+                          class="form-control form-control-user" 
+                          id="phone_number" 
+                          name="phone_number"
+                          placeholder="phone_number"
+                          value="<?php echo $clients->phone_number; ?>"
                         >
                       </div>
                       <div class="form-group">
@@ -187,48 +207,14 @@
                           placeholder="Description..."
                           
                           aria-label="Description"
-                          aria-describedby="basic-addon2"><?php echo $products->description; ?></textarea>
-                      </div>
-                      <div class="form-group 12">
-                          <input 
-                            type="text" 
-                            class="form-control form-control-user" 
-                            id="pricefrom" 
-                            name="price_from"
-                            placeholder="Price From"
-                            value="<?php echo $products->price_from; ?>"
-                          >
-                      </div>
-                      
-                      <div class="form-group 12">
-                        <label for="file-upload" class="custom-file-upload">
-                          Upload Image
-                        </label>
-                          <input 
-                            type="file" 
-                            class="custom-file-upload form-control-file" 
-                            id="image_upload" 
-                            name="image_upload"
-                            size="33"
-                            value="<?php echo base_url("assets/img/".$products->image) ?>" 
-                          >
-                      </div>
-                      <div class="form-group 12">
-                      <select class="form-control" name="category_id">
-                          <?php 
-                            foreach($category as $c)
-                            { 
-                              echo '<option value="'.$c->category_id.'">'.$c->category_name.'</option>';
-                            }
-                          ?>
-                        </select>
+                          aria-describedby="basic-addon2"><?php echo $clients->description; ?></textarea>
                       </div>
                         <button 
                           class="btn btn-success"
-                          id="btn_upload" 
+                          id="btn_submit" 
                           type="submit"
                         >
-                        Upload
+                        Edit
                       </button>
                     </form>
                   </div>
