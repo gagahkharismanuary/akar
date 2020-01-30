@@ -171,8 +171,8 @@
                         <input 
                           type="text" 
                           class="form-control form-control-user" 
-                          id="name" 
-                          name="name"
+                          id="client_name" 
+                          name="client_name"
                           placeholder="Client Name"
                         >
                       </div>
@@ -181,8 +181,8 @@
                           <input 
                             type="email" 
                             class="form-control form-control-user" 
-                            id="email" 
-                            name="email"
+                            id="client_email" 
+                            name="client_email"
                             placeholder="Email"
                           >
                       </div>
@@ -190,8 +190,8 @@
                           <input 
                             type="tel" 
                             class="form-control form-control-user" 
-                            id="phone_number" 
-                            name="phone_number"
+                            id="client_phone_number" 
+                            name="client_phone_number"
                             placeholder="Phone Number"
                           >
                       </div>
@@ -199,8 +199,8 @@
                         <textarea 
                           type="text"
                           class="form-control bg-white small" 
-                          id="description" 
-                          name="description"
+                          id="client_description" 
+                          name="client_description"
                           placeholder="Description..."
                           aria-label="Description"
                           aria-describedby="basic-addon2"></textarea>

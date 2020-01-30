@@ -22,7 +22,7 @@ class Projects extends CI_Controller {
         parent::__construct();
 			
 				$this->load->helper('form', 'url');	
-				$this->load->model('m_data');
+				$this->load->model('m_projects');
 				$this->load->model('GambarModel');
 				$this->load->library('form_validation');
 				// Cek apakah terdapat session dengan nama authenticated
@@ -34,75 +34,9 @@ class Projects extends CI_Controller {
 	public function index()
 	{
 		// $data['project'] = $this->m_data->get_projects()->result();
-		$data['project'] = $this->m_data->get_projects(); 
+        $data['project'] = $this->m_projects->get_projects(); 
+
 		$this->load->view('admin/projects', $data);
 	}
 
-	public function add()
-	{
-			$data['category'] = $this->m_data->getAllCategory()->result();
-			$this->load->view("admin/projects_add", $data);
-	}
-
-	public function add_action(){
-
-		$upload = $this->GambarModel->upload();
-
-		$title = $this->input->post('title');
-		$price_from = $this->input->post('price_from');
-		$category_id = $this->input->post('category_id');
-
-			if($upload['result'] == "success"){ // Jika proses upload sukses		
-				$this->GambarModel->save($upload);
-			}else{ // Jika proses upload gagal
-				$data['message'] = $upload['error'];
-			}
-
-    	$data = array(
-				'title' => $title,
-				'price_from' => $price_from,
-				'category_id' => $category_id,
-				'image' => $upload['file']['file_name'],
-			);
-
-		$this->m_data->input_data($data, 'projects');
-		redirect('projects');
-	}
-
-	public function edit($id)  {
-		$data['projects'] = $this->m_data->getProjectDetail($id)->row();
-		$data['category'] = $this->m_data->getAllCategory()->result();
-		
-		$this->load->view('admin/projects_edit', $data);
-	}
-
-	public function update(){
-		
-		$upload = $this->GambarModel->upload();
-
-		$id = $this->input->post('projects_id');
-		$title = $this->input->post('title');
-		$price_from = $this->input->post('price_from');
-		$category_id = $this->input->post('category_id');
-
-			if($upload['result'] == "success"){ // Jika proses upload sukses		
-				$this->GambarModel->save($upload);
-			}else{ // Jika proses upload gagal
-				$data['message'] = $upload['error'];
-			}
-
-    	$data = array(
-				'title' => $title,
-				'price_from' => $price_from,
-				'category_id' => $category_id,
-				'image' => $upload['file']['file_name'],
-			);
-	
-		$where = array(
-			'projects_id' => $id
-		);
-	
-		$this->m_data->update_data($where,$data,'projects');
-		redirect('projects');
-	}
 }

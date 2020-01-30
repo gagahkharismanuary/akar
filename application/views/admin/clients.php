@@ -172,13 +172,13 @@
               <tbody>
               <?php foreach($clients as $c){ ?>
                 <tr>
-                    <td><?php echo $c->name ?></td>
-                    <td><?php echo $c->email ?></td>
-                    <td><?php echo $c->phone_number ?></td>
-                    <td><?php echo $c->description ?></td>
+                    <td><?php echo $c->client_name ?></td>
+                    <td><?php echo $c->client_email ?></td>
+                    <td><?php echo $c->client_phone_number ?></td>
+                    <td><?php echo $c->client_description ?></td>
                     <td>
                         <a 
-                        href=<?php echo clients_url('edit/').$c->id ?> 
+                        href=<?php echo clients_url('edit/').$c->client_id ?> 
                         >
                         <button class="btn-info">
                         <i class="fas fa-edit"></i> 

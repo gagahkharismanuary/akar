@@ -162,28 +162,30 @@
               <thead>
                 <tr>
                   <th>Title</th>
-                  <th>Price From</th>
-                  <th>Image</th>
-                  <th>category</category>
+                  <th>Client Name</th>
+                  <th>Project Status</th>
+                  <th>Description</th>
+                  <th>Category</th>
+                  <th>Start Time</th>
+                  <th>End Time</th>
+                  
                   <th>Action</category>
               </thead>
               
               <tbody>
               <?php foreach($project as $p){ ?>
+              
                 <tr>
-                  <td><?php echo $p->title ?></td>
-                  <td><?php echo $p->price_from ?></td>
-                  <td class="text-center">
-                    <img 
-                      src=<?php echo base_url("assets/img/".$p->image) ?>
-                      alt=""
-                      style="width: 200px"
-                    >
-                  </td>
+                  <td><?php echo $p->project_name ?></td>
+                  <td><?php echo $p->client_name ?></td>
+                  <td><?php echo $p->status_name ?></td>
+                  <td><?php echo $p->project_description ?></td>
                   <td><?php echo $p->category_name ?></td>
+                  <td><?php echo $p->start_time ?></td>
+                  <td><?php echo $p->end_time ?></td>
                   <td>
                     <a 
-                      href=<?php echo projects_url('edit/').$p->projects_id ?> 
+                      href=<?php echo projects_url('edit/').$p->project_id ?> 
                     >
                       <button class="btn-info">
                       <i class="fas fa-edit"></i> 
