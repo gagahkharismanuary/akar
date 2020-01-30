@@ -165,6 +165,7 @@
                   <th>Client Name</th>
                   <th>Project Status</th>
                   <th>Description</th>
+                  <th>Portfolio Reference</th>
                   <th>Category</th>
                   <th>Start Time</th>
                   <th>End Time</th>
@@ -180,9 +181,10 @@
                   <td><?php echo $p->client_name ?></td>
                   <td><?php echo $p->status_name ?></td>
                   <td><?php echo $p->project_description ?></td>
+                  <td><?php echo $p->title ?></td>
                   <td><?php echo $p->category_name ?></td>
-                  <td><?php echo $p->start_time ?></td>
-                  <td><?php echo $p->end_time ?></td>
+                  <td><?php echo date ('d-m-Y', strtotime($p->start_time)) ?></td>
+                  <td><?php echo date ('d-m-Y', strtotime($p->end_time)) ?></td>
                   <td>
                     <a 
                       href=<?php echo projects_url('edit/').$p->project_id ?> 

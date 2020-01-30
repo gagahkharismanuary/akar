@@ -200,13 +200,18 @@
             <section class="p-0 bg-extra-dark-gray wow fadeIn" id="services">
                 <div class="container-fluid p-0">
                     <div class="row m-0">
-                        <div class="col-12 col-lg-6 position-relative md-height-500px sm-height-350px cover-background wow slideInLeft" style="background-image: url('http://placehold.it/1050x850');"></div>
+                        <div class="col-12 col-lg-6 position-relative md-height-500px sm-height-350px cover-background wow slideInLeft" style="display:flex; align-self:center;">
+                            <img 
+                                src=<?php echo base_url("assets/img/".$products->image) ?>
+                                alt=""
+                            >
+                        </div>
                         <div class="col-12 col-lg-6 d-flex flex-column justify-content-center last-paragraph-no-margin wow slideInRight">
                             <div class="padding-fifteen-all md-padding-ten-all sm-no-padding-lr text-center text-lg-left">
-                                <span class="text-medium margin-20px-bottom d-block alt-font">We create premium designs and technology.</span>
+                                <span class="text-medium margin-20px-bottom d-block alt-font">We create premium products.</span>
                                 <h4 class="alt-font text-light-gray">A digital studio crafting beautiful experiences.</h4>
                                 <p class="width-80 lg-width-100">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum has been the industry. Lorem Ipsum is simply dummy text of the printing and industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum has been the industry.</p>
-                                <a href="home-creative-small-business.html" class="btn btn-small btn-white btn-rounded margin-35px-top sm-margin-25px-top">Start Your Business</a>
+                                <!-- <a href="home-creative-small-business.html" class="btn btn-small btn-white btn-rounded margin-35px-top sm-margin-25px-top">Start Your Business</a> -->
                             </div>
                         </div>
                     </div>
@@ -219,29 +224,29 @@
                     <div class="row">
                         <!-- start counter item -->
                         <div class="col-12 col-lg-3 col-md-6 md-margin-five-bottom sm-padding-15px-left sm-margin-30px-bottom text-center wow fadeInDown">
-                            <h4 class="text-extra-dark-gray alt-font font-weight-600 m-0 timer" data-speed="2000" data-to="25">25</h4>
+                            <h4 class="text-extra-dark-gray alt-font font-weight-600 m-0 timer" data-speed="2000" data-to="2">2</h4>
                             <span class="d-block margin-three-bottom">Art Director</span>
                             <div class="separator-line-verticle-large bg-deep-pink d-inline-block"></div>
                         </div>
                         <!-- end counter item -->
                         <!-- start counter item -->
                         <div class="col-12 col-lg-3 col-md-6 md-margin-five-bottom sm-padding-15px-left sm-margin-30px-bottom text-center wow fadeInDown" data-wow-delay="0.2s">
-                            <h4 class="text-extra-dark-gray alt-font font-weight-600 m-0 timer" data-speed="2000" data-to="50">50</h4>
+                            <h4 class="text-extra-dark-gray alt-font font-weight-600 m-0 timer" data-speed="2000" data-to="3">3</h4>
                             <span class="d-block margin-three-bottom">Designer</span>
                             <div class="separator-line-verticle-large bg-deep-pink d-inline-block"></div>
                         </div>
                         <!-- end counter item -->
                         <!-- start counter item -->
                         <div class="col-12 col-lg-3 col-md-6 sm-margin-seven-bottom sm-padding-15px-left sm-margin-30px-bottom text-center  wow fadeInDown" data-wow-delay="0.4s">
-                            <h4 class="text-extra-dark-gray alt-font font-weight-600 m-0 timer" data-speed="2000" data-to="35">35</h4>
-                            <span class="d-block margin-three-bottom">Developer</span>
+                            <h4 class="text-extra-dark-gray alt-font font-weight-600 m-0 timer" data-speed="2000" data-to="4">4</h4>
+                            <span class="d-block margin-three-bottom">Videographer</span>
                             <div class="separator-line-verticle-large bg-deep-pink d-inline-block"></div>
                         </div>
                         <!-- end counter item -->
                         <!-- start counter item -->
                         <div class="col-12 col-lg-3 col-md-6 sm-padding-15px-left text-center wow fadeInDown" data-wow-delay="0.6s">
-                            <h4 class="text-extra-dark-gray alt-font font-weight-600 m-0 timer" data-speed="2000" data-to="25">25</h4>
-                            <span class="d-block margin-three-bottom">Animator</span>
+                            <h4 class="text-extra-dark-gray alt-font font-weight-600 m-0 timer" data-speed="2000" data-to="5">5</h4>
+                            <span class="d-block margin-three-bottom">Photographer</span>
                             <div class="separator-line-verticle-large bg-deep-pink d-inline-block"></div>
                         </div>
                         <!-- end counter item -->
@@ -289,7 +294,7 @@
             </section>
             <!-- end social links section -->
                  
-            <section class="wow fadeIn p-0 bg-extra-dark-gray">
+            <!-- <section class="wow fadeIn p-0 bg-extra-dark-gray">
                 <div class="container-fluid p-0">
                     <div class="row justify-content-between align-items-center no-gutters padding-30px-lr md-padding-15px-lr">
                         <div class="width-45 text-left">
@@ -315,64 +320,9 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
             <!-- start footer --> 
-            <footer class="footer-clean padding-five-tb sm-padding-30px-tb"> 
-                <div class="footer-widget-area padding-40px-bottom sm-padding-30px-bottom">
-                    <div class="container">
-                        <div class="row">
-                            <!-- start logo -->
-                            <div class="col-lg-3 widget text-left text-md-center text-lg-left md-margin-50px-bottom sm-margin-30px-bottom">
-                                <a href="http://www.themezaa.com" class="d-inline-block"><img class="footer-logo" src="images/logo.png" data-rjs="images/logo@2x.png" alt=""></a>
-                            </div>
-                            <!-- end logo -->
-                            <!-- start contact information -->
-                            <div class="col-lg-3 col-md-4 widget sm-margin-30px-bottom">
-                                <div class="widget-title alt-font text-extra-small text-extra-dark-gray text-uppercase margin-15px-bottom font-weight-600">contact information</div>
-                                <div class="text-small line-height-24 width-75 sm-width-100 text-medium-gray">301 The Greenhouse, Custard Factory, London, E2 8DY.</div>
-                                <div class="text-small line-height-24 text-medium-gray">Email: <a href="mailto:sales@domain.com" class="text-medium-gray">sales@domain.com</a></div>
-                                <div class="text-small line-height-24 text-medium-gray">Phone: +44 (0) 123 456 7890</div>
-                            </div>
-                            <!-- end contact information -->
-                            <!-- start social media -->
-                            <div class="col-lg-3 col-md-4 widget sm-margin-30px-bottom">
-                                <div class="widget-title alt-font text-extra-small text-extra-dark-gray text-uppercase margin-15px-bottom font-weight-600">On social networks</div>
-                                <ul class="list-unstyled">
-                                    <li class="w-50 float-left"><a href="https://www.facebook.com/" target="_blank" class="text-medium-gray text-small">Facebook</a></li>
-                                    <li class="w-50 float-left"><a href="https://www.pinterest.com/" target="_blank" class="text-medium-gray text-small">Pinterest</a></li>
-                                    <li class="w-50 float-left"><a href="https://www.twitter.com/" target="_blank" class="text-medium-gray text-small">Twitter</a></li>
-                                    <li class="w-50 float-left"><a href="https://www.linkedin.com/" target="_blank" class="text-medium-gray text-small">Linkedin</a></li>
-                                    <li class="w-50 float-left"><a href="https://www.dribbble.com/" target="_blank" class="text-medium-gray text-small">Dribbble</a></li>
-                                    <li class="w-50 float-left"><a href="https://www.youtube.com/" target="_blank" class="text-medium-gray text-small">Youtube</a></li>
-                                    <li class="w-50 float-left"><a href="https://www.instagram.com/" target="_blank" class="text-medium-gray text-small">Instagram</a></li>
-                                </ul>
-                            </div>
-                            <!-- end social media -->
-                            <!-- start newsletter -->
-                            <div class="col-lg-3 col-md-4 widget">
-                                <div class="widget-title alt-font text-extra-small text-extra-dark-gray text-uppercase margin-20px-bottom font-weight-600">subscribe newsletter</div>
-                                <form id="subscribenewsletterform" action="javascript:void(0)" method="post">
-                                    <div class="position-relative w-100">
-                                        <div id="success-subscribe-newsletter" class="mx-0"></div>
-                                        <input type="text" id="email" name="email" class="bg-transparent text-small margin-10px-bottom" placeholder="Enter your email...">
-                                        <button id="button-subscribe-newsletter" type="submit" class="btn btn-dark-gray btn-very-small">subscribe</button>
-                                    </div>   
-                                </form>
-                            </div>
-                            <!-- end newsletter --> 
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="border-color-extra-light-gray border-top padding-40px-top sm-padding-30px-top">
-                        <div class="row"> 
-                            <!-- start copyright -->
-                            <div class="col-12 text-small text-center text-medium-gray">&COPY; 2019 POFO is Proudly Powered by <a href="http://wwwo.themezaa.com" target="_blank" title="ThemeZaa" class="text-medium-gray">ThemeZaa</a></div>
-                            <!-- end copyright -->
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            
             <!-- end footer -->
             <!-- start scroll to top -->
             <a class="scroll-top-arrow" href="javascript:void(0);"><i class="ti-arrow-up"></i></a>
