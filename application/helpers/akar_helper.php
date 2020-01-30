@@ -25,5 +25,8 @@ function products_url($path){
 function clients_url($path){
 	return 'http://localhost/akar/clients/'.$path;
 }
+function web_url($path){
+	return 'http://localhost/akar/web/'.$path;
+}
 
 ?>

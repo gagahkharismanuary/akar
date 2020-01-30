@@ -31,4 +31,11 @@ class Web extends CI_Controller {
 		$data['products'] = $this->m_web->get_products(); 
 		$this->load->view('web/index.php', $data);
 	}
+
+	public function detail($id)  {
+		$data['products'] = $this->m_web->getProductDetail($id)->row();
+		$data['category'] = $this->m_web->getAllCategory()->result();
+		
+		$this->load->view('web/product_detail', $data);
+	}
 }
