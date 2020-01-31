@@ -218,7 +218,13 @@
                           <?php 
                             foreach($category as $c)
                             { 
-                              echo '<option value="'.$c->category_id.'">'.$c->category_name.'</option>';
+                              $array = $c->category_id;
+                              $key = similar_text($products->category_id, $array);
+                              if($key) {
+                                echo '<option value="'.$c->category_id.'" selected>'.$c->category_name.'</option>';
+                              } else {
+                                echo '<option value="'.$c->category_id.'">'.$c->category_name.'</option>';
+                              }
                             }
                           ?>
                         </select>
