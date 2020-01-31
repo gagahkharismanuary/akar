@@ -39,4 +39,39 @@ class Projects extends CI_Controller {
 		$this->load->view('admin/projects', $data);
 	}
 
+
+	public function add() {
+		$data['category'] = $this->m_projects->getAllCategory()->result();
+		$data['clients'] = $this->m_projects->getAllClients()->result();
+		$data['status'] = $this->m_projects->getAllStatus()->result();
+		$data['products'] = $this->m_projects->getAllProducts()->result();
+		$this->load->view("admin/projects_add", $data);
+	}
+
+	public function add_action() {		
+
+		$project_name = $this->input->post('project_name');
+		$project_description = $this->input->post('project_description');
+		$client_id = $this->input->post('client_id');
+		$category_id = $this->input->post('category_id');
+		$status_id = $this->input->post('status_id');
+		$products_id = $this->input->post('products_id');
+		$start_time = $this->input->post('start_time');
+		$end_time = $this->input->post('end_time');
+
+
+    	$data = array(
+				'project_name' => $project_name,
+				'project_description' => $project_description,
+				'client_id' => $client_id,
+				'category_id' => $category_id,
+				'status_id' => $status_id,
+				'products_id' => $products_id,
+				'start_time' => $start_time,
+				'end_time' => $end_time,
+			);
+
+		$this->m_projects->input_project($data, 'projects');
+		redirect('projects');
+	}
 }

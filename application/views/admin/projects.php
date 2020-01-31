@@ -162,9 +162,9 @@
               <thead>
                 <tr>
                   <th>Title</th>
+                  <th>Description</th>
                   <th>Client Name</th>
                   <th>Project Status</th>
-                  <th>Description</th>
                   <th>Portfolio Reference</th>
                   <th>Category</th>
                   <th>Start Time</th>
@@ -178,9 +178,9 @@
               
                 <tr>
                   <td><?php echo $p->project_name ?></td>
+                  <td><?php echo $p->project_description ?></td>
                   <td><?php echo $p->client_name ?></td>
                   <td><?php echo $p->status_name ?></td>
-                  <td><?php echo $p->project_description ?></td>
                   <td><?php echo $p->title ?></td>
                   <td><?php echo $p->category_name ?></td>
                   <td><?php echo date ('d-m-Y', strtotime($p->start_time)) ?></td>

@@ -167,39 +167,63 @@
                       method='post'
                       enctype="multipart/form-data"
                     >
-                      <div class="form-group">
+                      <div class="form-group row">
                         <input 
                           type="text" 
                           class="form-control form-control-user" 
-                          id="title" 
-                          name="title"
-                          placeholder="Projects Title"
+                          id="project_name" 
+                          name="project_name"
+                          placeholder="Projects Name"
                         >
                       </div>
-                      <div class="form-group 12">
-                          <input 
-                            type="text" 
-                            class="form-control form-control-user" 
-                            id="pricefrom" 
-                            name="price_from"
-                            placeholder="Price From"
-                          >
+                     
+                      <div class="form-group row">
+                        <textarea 
+                          type="text"
+                          class="form-control bg-white small" 
+                          id="project_description" 
+                          name="project_description"
+                          placeholder="Description..."
+                          aria-label="Description"
+                          aria-describedby="basic-addon2"></textarea>
                       </div>
-                      <div class="form-group 12">
-                        <label for="file-upload" class="custom-file-upload">
-                          Upload Image
-                        </label>
-                          <input 
-                            type="file" 
-                            class="custom-file-upload form-control-file" 
-                            id="image_upload" 
-                            name="image_upload"
-                            size="33"
-                          >
-                          <!-- <input type="file" name="berkas" /> -->
+                      <div class="form-group row">
+                        <span class="col-lg-2 d-flex align-items-center">Client: </span>
+                        <select class="form-control col-lg-10" name="client_id">
+                          <?php 
+                            foreach($clients as $client)
+                            { 
+                              echo '<option value="'.$client->client_id.'">'.$client->client_name.'</option>';
+                            }
+                          ?>
+                        </select>
                       </div>
-                      <div class="form-group 12">
-                        <select class="form-control" name="category_id">
+                      
+                      <div class="form-group row">
+                        <span class="col-lg-2 d-flex align-items-center">Status: </span>
+                        <select class="form-control col-lg-10" name="status_id">
+                          <?php 
+                            foreach($status as $s)
+                            { 
+                              echo '<option value="'.$s->status_id.'">'.$s->status_name.'</option>';
+                            }
+                          ?>
+                        </select>
+                      </div>
+                      <div class="form-group row">
+                        <span class="col-lg-2 d-flex align-items-center">Portfolio Reference: </span>
+                        <select class="form-control col-lg-10" name="products_id">
+                          <?php 
+                            foreach($products as $product)
+                            { 
+                              echo '<option value="'.$product->product_id.'">'.$product->title.'</option>';
+                            }
+                          ?>
+                        </select>
+                      </div>
+                      <div class="form-group row">
+                        <span class="col-lg-2 d-flex align-items-center">Category: </span>
+                        <select class="form-control col-lg-10" name="category_id">
                           <?php 
                             foreach($category as $c)
                             { 
@@ -207,6 +231,24 @@
                             }
                           ?>
                         </select>
+                      </div>
+                      <div class="form-group row">
+                          <span class="col-lg-2 d-flex align-items-center">Start Time: </span>
+                          <input 
+                            type="date" 
+                            class="form-control form-control-user col-lg-4" 
+                            id="start_time" 
+                            name="start_time"
+                            placeholder="Start Time"
+                          >
+                          <span class="col-lg-2 d-flex align-items-center">End Time: </span>
+                          <input 
+                            type="date" 
+                            class="form-control form-control-user col-lg-4" 
+                            id="end_time" 
+                            name="end_time"
+                            placeholder="End Time"
+                          >
                       </div>
                         <button 
                           class="btn btn-success"

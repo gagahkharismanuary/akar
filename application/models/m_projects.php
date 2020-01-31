@@ -18,4 +18,26 @@ class M_projects extends CI_Model{
         $query = $this->db->query('SELECT category_name, category_id FROM category');
         return $query;
 	}
+
+	function getAllClients()
+    {
+        $query = $this->db->query('SELECT client_name, client_id FROM clients');
+        return $query;
+	}
+
+	function getAllStatus()
+    {
+        $query = $this->db->query('SELECT status_name, status_id FROM status');
+        return $query;
+	}
+
+	function getAllProducts()
+    {
+        $query = $this->db->query('SELECT title, product_id FROM products');
+        return $query;
+	}
+
+	function input_project($data,$table){
+		$this->db->insert($table,$data);
+	}
 }
