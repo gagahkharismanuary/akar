@@ -74,4 +74,45 @@ class Projects extends CI_Controller {
 		$this->m_projects->input_project($data, 'projects');
 		redirect('projects');
 	}
+
+	public function edit($id)  {
+		$data['projects'] = $this->m_projects->getProjectDetail($id)->row();
+		$data['category'] = $this->m_projects->getAllCategory()->result();
+		$data['clients'] = $this->m_projects->getAllClients()->result();
+		$data['status'] = $this->m_projects->getAllStatus()->result();
+		$data['products'] = $this->m_projects->getAllProducts()->result();
+		$this->load->view('admin/projects_edit', $data);
+	}
+
+	public function update(){
+		
+		$project_id = $this->input->post('project_id');
+		$project_name = $this->input->post('project_name');
+		$project_description = $this->input->post('project_description');
+		$client_id = $this->input->post('client_id');
+		$category_id = $this->input->post('category_id');
+		$status_id = $this->input->post('status_id');
+		$products_id = $this->input->post('products_id');
+		$start_time = $this->input->post('start_time');
+		$end_time = $this->input->post('end_time');
+
+
+    	$data = array(
+			'project_name' => $project_name,
+			'project_description' => $project_description,
+			'client_id' => $client_id,
+			'category_id' => $category_id,
+			'status_id' => $status_id,
+			'products_id' => $products_id,
+			'start_time' => $start_time,
+			'end_time' => $end_time,
+		);
+	
+		$where = array(
+			'project_id' => $project_id
+		);
+	
+		$this->m_projects->update_project($where,$data,'projects');
+		redirect('projects');
+	}
 }

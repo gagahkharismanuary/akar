@@ -166,50 +166,115 @@
                       method='post'
                       enctype="multipart/form-data"
                     >
-                    <input type="hidden" name="projects_id" value="<?php echo $projects->projects_id ?>">
-                      <div class="form-group">
+                    <input type="hidden" name="project_id" value="<?php echo $projects->project_id ?>">
+                      <div class="form-group row">
                         <input 
                           type="text" 
                           class="form-control form-control-user" 
-                          id="title" 
-                          name="title"
-                          placeholder="Projects Title"
-                          value="<?php echo $projects->title; ?>"
+                          id="project_name" 
+                          name="project_name"
+                          placeholder="Projects Name"
+                          value="<?php echo $projects->project_name; ?>"
                         >
                       </div>
-                      <div class="form-group 12">
-                          <input 
-                            type="text" 
-                            class="form-control form-control-user" 
-                            id="pricefrom" 
-                            name="price_from"
-                            placeholder="Price From"
-                            value="<?php echo $projects->price_from; ?>"
-                          >
+                      <div class="form-group row">
+                        <textarea 
+                          type="text"
+                          class="form-control bg-white small" 
+                          id="project_description" 
+                          name="project_description"
+                          placeholder="Description..."
+                          aria-label="Description"
+                          aria-describedby="basic-addon2"><?php echo $projects->project_description; ?>
+                        </textarea>
                       </div>
-                      
-                      <div class="form-group 12">
-                        <label for="file-upload" class="custom-file-upload">
-                          Upload Image
-                        </label>
-                          <input 
-                            type="file" 
-                            class="custom-file-upload form-control-file" 
-                            id="image_upload" 
-                            name="image_upload"
-                            size="33"
-                            value="<?php echo base_url("assets/img/".$projects->image) ?>" 
-                          >
-                      </div>
-                      <div class="form-group 12">
-                      <select class="form-control" name="category_id">
+                      <div class="form-group row">
+                        <span class="col-lg-2 d-flex align-items-center">Client: </span>
+                        <select class="form-control col-lg-10" name="client_id">
                           <?php 
-                            foreach($category as $c)
+                            foreach($clients as $client)
                             { 
-                              echo '<option value="'.$c->category_id.'">'.$c->category_name.'</option>';
+                              $array = $client->client_id;
+                              $key = similar_text($projects->client_id, $array);
+                              if($key) {
+                                echo '<option value="'.$client->client_id.'" selected>'.$client->client_name.'</option>';
+                              } else {
+                                echo '<option value="'.$client->client_id.'">'.$client->client_name.'</option>';
+                              }
                             }
                           ?>
                         </select>
+                      </div>
+                      <div class="form-group row">
+                        <span class="col-lg-2 d-flex align-items-center">Status: </span>
+                        <select class="form-control col-lg-10" name="status_id">
+                          <?php 
+                            foreach($status as $s)
+                            { 
+                              $array = $s->status_id;
+                              $key = similar_text($projects->status_id, $array);
+                              if($key) {
+                                echo '<option value="'.$s->status_id.'" selected>'.$s->status_name.'</option>';
+                              } else {
+                                echo '<option value="'.$s->status_id.'">'.$s->status_name.'</option>';
+                              }
+                            }
+                          ?>
+                        </select>
+                      </div>
+                      <div class="form-group row">
+                        <span class="col-lg-2 d-flex align-items-center">Portfolio Reference: </span>
+                        <select class="form-control col-lg-10" name="products_id">
+                          <?php 
+                            foreach($products as $product)
+                            { 
+                              $array = $product->product_id;
+                              $key = similar_text($projects->products_id, $array);
+                              if($key) {
+                                echo '<option value="'.$product->product_id.'" selected>'.$product->title.'</option>';
+                              } else {
+                                echo '<option value="'.$product->product_id.'">'.$product->title.'</option>';
+                              }
+                            }
+                          ?>
+                        </select>
+                      </div>
+                      <div class="form-group row">
+                        <span class="col-lg-2 d-flex align-items-center">Category: </span>
+                        <select class="form-control col-lg-10" name="category_id">
+                          <?php 
+                            foreach($category as $c)
+                            { 
+                              $array = $c->category_id;
+                              $key = similar_text($projects->category_id, $array);
+                              if($key) {
+                                echo '<option value="'.$c->category_id.'" selected>'.$c->category_name.'</option>';
+                              } else {
+                                echo '<option value="'.$c->category_id.'">'.$c->category_name.'</option>';
+                              }
+                            }
+                          ?>
+                        </select>
+                      </div>
+                      <div class="form-group row">
+                          <span class="col-lg-2 d-flex align-items-center">Start Time: </span>
+                          <input 
+                            type="date" 
+                            class="form-control form-control-user col-lg-4" 
+                            id="start_time" 
+                            name="start_time"
+                            placeholder="Start Time"
+                            value="<?php echo date('Y-m-d', strtotime($projects->start_time)); ?>"
+                          >
+                          <span class="col-lg-2 d-flex align-items-center">End Time: </span>
+                          <input 
+                            type="date" 
+                            class="form-control form-control-user col-lg-4" 
+                            id="end_time" 
+                            name="end_time"
+                            placeholder="End Time"
+                            value="<?php echo date('Y-m-d', strtotime($projects->end_time)); ?>"
+                          >
                       </div>
                         <button 
                           class="btn btn-success"

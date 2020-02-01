@@ -40,4 +40,18 @@ class M_projects extends CI_Model{
 	function input_project($data,$table){
 		$this->db->insert($table,$data);
 	}
+
+	function getProjectDetail($id)
+	{
+		$this->db->select('*');
+		$this->db->from('projects');
+		$this->db->where('project_id', $id);
+
+		return $this->db->get();
+	}
+
+	function update_project($where,$data,$table){
+		$this->db->where($where);
+		$this->db->update($table,$data);
+	}
 }
