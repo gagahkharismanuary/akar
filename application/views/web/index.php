@@ -159,7 +159,7 @@
                                 <li class="grid-item classic wow fadeInUp">
                                     <a href=<?php echo web_url('detail/').$p->product_id ?> target="_blank">
                                         <div class="portfolio-img bg-extra-dark-gray"><img src=<?php echo base_url("assets/img/".$p->image) ?> alt=""/></div>
-                                        <span class="portfolio-item-title"><?php echo $p->title ?>e</span>
+                                        <span class="portfolio-item-title"><?php echo $p->title ?></span>
                                     </a>
                                 </li>
                                 <?php } ?>
@@ -169,7 +169,27 @@
                                 <li class="grid-item creative wow fadeInUp">
                                     <a href=<?php echo web_url('detail/').$p->product_id ?> target="_blank">
                                         <div class="portfolio-img bg-extra-dark-gray"><img src=<?php echo base_url("assets/img/".$p->image) ?> alt=""/></div>
-                                        <span class=<?php echo products_url('detail/').$p->product_id ?>><?php echo $p->title ?>e</span>
+                                        <span class=<?php echo products_url('detail/').$p->product_id ?>><?php echo $p->title ?></span>
+                                    </a>
+                                </li>
+                                <?php } ?>
+                            <?php } ?>
+                            <?php foreach($products as $p){ ?>
+                                <?php if($p->category_id == 3) { ?>
+                                <li class="grid-item portfolio wow fadeInUp">
+                                    <a href=<?php echo web_url('detail/').$p->product_id ?> target="_blank">
+                                        <div class="portfolio-img bg-extra-dark-gray"><img src=<?php echo base_url("assets/img/".$p->image) ?> alt=""/></div>
+                                        <span class=<?php echo products_url('detail/').$p->product_id ?>><?php echo $p->title ?></span>
+                                    </a>
+                                </li>
+                                <?php } ?>
+                            <?php } ?>
+                            <?php foreach($products as $p){ ?>
+                                <?php if($p->category_id == 4) { ?>
+                                <li class="grid-item other wow fadeInUp">
+                                    <a href=<?php echo web_url('detail/').$p->product_id ?> target="_blank">
+                                        <div class="portfolio-img bg-extra-dark-gray"><img src=<?php echo base_url("assets/img/".$p->image) ?> alt=""/></div>
+                                        <span class=<?php echo products_url('detail/').$p->product_id ?>><?php echo $p->title ?></span>
                                     </a>
                                 </li>
                                 <?php } ?>

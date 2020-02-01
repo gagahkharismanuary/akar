@@ -25,4 +25,9 @@ class M_web extends CI_Model{
 
 		return $this->db->get();
 	}
+
+	function input_project($data,$table){
+		$query = $this->db->insert($table, $data);
+		return $this->db->insert_id();
+	}
 }

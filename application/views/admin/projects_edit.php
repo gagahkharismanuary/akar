@@ -278,10 +278,10 @@
                       </div>
                         <button 
                           class="btn btn-success"
-                          id="btn_upload" 
+                          id="btn_submit" 
                           type="submit"
                         >
-                        Upload
+                        Submit
                       </button>
                     </form>
                   </div>

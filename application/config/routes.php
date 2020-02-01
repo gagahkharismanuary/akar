@@ -60,3 +60,4 @@ $route['products/edit/(:num)'] = 'products/edit/$1';
 $route['clients/edit/(:num)'] = 'clients/edit/$1';
 
 $route['web/detail/(:num)'] = 'web/detail/$1';
+$route['web/offer/(:num)'] = 'web/offer/$1';

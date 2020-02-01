@@ -157,7 +157,12 @@
                             <p class="margin-35px-bottom d-block">
                                 <?php echo $products->description ?>
                             </p>
-                            <a href="index.html" class="btn btn-transparent-light-gray btn-small">Offer Project</a>
+                            <a 
+                                href=<?php echo web_url('offer/').$products->product_id ?>
+                                class="btn btn-transparent-light-gray btn-small"
+                            >
+                                Offer Project
+                            </a>
                         </div>
                         <div class="col-12 col-lg-4 offset-lg-2 wow fadeInRight">
                             <ul class="list-style-9 margin-twelve-left">
