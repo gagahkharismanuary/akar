@@ -76,6 +76,15 @@
           <i class="fas fa-fw fa-folder-open"></i>
           <span>Projects</span></a>
       </li>
+      <!-- Nav Report -->
+      <li class="nav-item">
+        <a 
+          class="nav-link" 
+          href="<?php echo akar_url('report') ?>"
+        >
+          <i class="fas fa-fw fa-folder-open"></i>
+          <span>Report</span></a>
+      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">

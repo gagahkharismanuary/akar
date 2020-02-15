@@ -1,7 +1,6 @@
-
 <html>
 <head>
-  <title>Products</title>
+  <title>Projects</title>
   <link href="<?php echo assets_url('vendor/fontawesome-free/css/all.min.css')?>" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
@@ -122,6 +121,7 @@
           <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="mr-2 d-none d-lg-inline text-gray-600 small"> <?php echo $this->session->userdata('nama'); ?></span>
+             
               <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
             </a>
             <!-- Dropdown - User Information -->
@@ -153,61 +153,51 @@
     <div class="container-fluid">
 
       <!-- Page Heading -->
-      <h1 class="h3 mb-2 text-gray-800">Products</h1>
-
+      <h1 class="h3 mb-2 text-gray-800">Report Projects</h1>
       <!-- DataTales Example -->
       <div class="card shadow mb-4">
-        <div class="card-header py-3 text-right">
-          <a 
-            href=<?php echo products_url('add') ?> 
-            class="btn btn-primary"
-          >
-            <i class="fas fa-plus"></i> 
-            Add Products
-          </a>
-        </div>
         <div class="card-body">
           <div class="table-responsive">
+          <?php if($this->session->userdata('nama') == 'direktur') { ?>
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
                   <th>Title</th>
                   <th>Description</th>
-                  <th>Price From</th>
-                  <th>Image</th>
-                  <th>category</category>
-                  <th>Action</category>
+                  <th>Client Name</th>
+                  <th>Project Status</th>
+                  <th>Portfolio Reference</th>
+                  <th>Category</th>
+                  <th>Start Time</th>
+                  <th>End Time</th>
+                  
               </thead>
               
               <tbody>
-              <?php foreach($products as $p){ ?>
-                <tr>
-                  <td><?php echo $p->title ?></td>
-                  <td><?php echo $p->description ?></td>
-                  <td><?php echo $p->price_from ?></td>
-                  <td class="text-center">
-                    <img 
-                      src=<?php echo base_url("assets/img/".$p->image) ?>
-                      alt=""
-                      style="width: 200px"
-                    >
-                  </td>
-                  <td><?php echo $p->category_name ?></td>
-                  <td>
-                    <a 
-                      href=<?php echo products_url('edit/').$p->product_id ?> 
-                    >
-                      <button class="btn-info">
-                      <i class="fas fa-edit"></i> 
-                        Edit
-                      </button>
-                    </a>
-                  </td>
-                </tr>
+              <?php foreach($project as $p){ ?>
+                <?php if($p->status_id == 2) { ?>
+                    <tr>
+                    <td><?php echo $p->project_name ?></td>
+                    <td><?php echo $p->project_description ?></td>
+                    <td><?php echo $p->client_name ?></td>
+                    <td><?php echo $p->status_name ?></td>
+                    <td><?php echo $p->title ?></td>
+                    <td><?php echo $p->category_name ?></td>
+                    <td><?php echo date ('d-m-Y', strtotime($p->start_time)) ?></td>
+                    <td><?php echo date ('d-m-Y', strtotime($p->end_time)) ?></td>
+                    </tr>
+                <?php } ?>
               <?php } ?>
               </tbody>
             </table>
           </div>
+
+            <?php } else { ?>
+
+                <p>
+                    Hanya bisa dilihat jika anda dengan role direktur
+                </p>
+            <?php } ?>
         </div>
       </div>
 
@@ -218,13 +208,13 @@
   <!-- End of Main Content -->
 
   <!-- Footer -->
-  <footer class="sticky-footer bg-white">
+  <!-- <footer class="sticky-footer bg-white">
     <div class="container my-auto">
       <div class="copyright text-center my-auto">
         <span>Copyright &copy; Your Website 2019</span>
       </div>
     </div>
-  </footer>
+  </footer> -->
   <!-- End of Footer -->
 
   </div>

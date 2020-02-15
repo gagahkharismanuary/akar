@@ -66,21 +66,21 @@ class Clients extends CI_Controller {
 
 	public function update(){
 
-		$id = $this->input->post('id');
-		$name = $this->input->post('name');
-		$email = $this->input->post('email');
-        $phone_number = $this->input->post('phone_number');
-        $description = $this->input->post('description');
+		$client_id = $this->input->post('client_id');
+		$client_name = $this->input->post('client_name');
+		$client_email = $this->input->post('client_email');
+        $client_phone_number = $this->input->post('client_phone_number');
+        $client_description = $this->input->post('client_description');
 
     	$data = array(
-				'name' => $name,
-				'email' => $email,
-				'phone_number' => $phone_number,
-				'description' => $description,
+				'client_name' => $client_name,
+				'client_email' => $client_email,
+				'client_phone_number' => $client_phone_number,
+				'client_description' => $client_description,
 			);
 	
 		$where = array(
-			'id' => $id
+			'client_id' => $client_id
 		);
 	
 		$this->m_clients->update_clients($where,$data,'clients');

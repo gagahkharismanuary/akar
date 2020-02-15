@@ -18,7 +18,7 @@ class M_clients extends CI_Model{
 	{
 		$this->db->select('*');
 		$this->db->from('clients');
-		$this->db->where('id', $id);
+		$this->db->where('client_id', $id);
 
 		return $this->db->get();
 	}

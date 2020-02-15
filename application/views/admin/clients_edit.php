@@ -77,6 +77,15 @@
           <i class="fas fa-fw fa-folder-open"></i>
           <span>Projects</span></a>
       </li>
+      <!-- Nav Report -->
+      <li class="nav-item">
+        <a 
+          class="nav-link" 
+          href="<?php echo akar_url('report') ?>"
+        >
+          <i class="fas fa-fw fa-folder-open"></i>
+          <span>Report</span></a>
+      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
@@ -167,47 +176,46 @@
                       method='post'
                       enctype="multipart/form-data"
                     >
-                    <input type="hidden" name="id" value="<?php echo $clients->id ?>">
+                    <input type="hidden" name="client_id" value="<?php echo $clients->client_id ?>">
                       <div class="form-group">
                         <input 
                           type="text" 
                           class="form-control form-control-user" 
-                          id="name" 
-                          name="name"
+                          id="client_name" 
+                          name="client_name"
                           placeholder="Client Name"
-                          value="<?php echo $clients->name; ?>"
+                          value="<?php echo $clients->client_name; ?>"
                         >
                       </div>
                       <div class="form-group">
                         <input 
                           type="text" 
                           class="form-control form-control-user" 
-                          id="email" 
-                          name="email"
+                          id="client_email" 
+                          name="client_email"
                           placeholder="Email"
-                          value="<?php echo $clients->email; ?>"
+                          value="<?php echo $clients->client_email; ?>"
                         >
                       </div>
                       <div class="form-group">
                         <input 
                           type="text" 
                           class="form-control form-control-user" 
-                          id="phone_number" 
-                          name="phone_number"
-                          placeholder="phone_number"
-                          value="<?php echo $clients->phone_number; ?>"
+                          id="client_phone_number" 
+                          name="client_phone_number"
+                          placeholder="Phone Number"
+                          value="<?php echo $clients->client_phone_number; ?>"
                         >
                       </div>
                       <div class="form-group">
                         <textarea 
                           type="text"
                           class="form-control bg-white small" 
-                          id="description" 
-                          name="description"
+                          id="client_description" 
+                          name="client_description"
                           placeholder="Description..."
-                          
                           aria-label="Description"
-                          aria-describedby="basic-addon2"><?php echo $clients->description; ?></textarea>
+                          aria-describedby="basic-addon2"><?php echo $clients->client_description; ?></textarea>
                       </div>
                         <button 
                           class="btn btn-success"
