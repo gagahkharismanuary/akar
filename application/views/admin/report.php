@@ -158,7 +158,7 @@
       <div class="card shadow mb-4">
         <div class="card-body">
           <div class="table-responsive">
-          <?php if($this->session->userdata('nama') == 'direktur') { ?>
+          <?php if($this->session->userdata('nama') == 'direktur' || $this->session->userdata('nama') == 'pemasaran') { ?>
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
@@ -195,7 +195,7 @@
             <?php } else { ?>
 
                 <p>
-                    Hanya bisa dilihat jika anda dengan role direktur
+                    Hanya bisa dilihat jika anda dengan role direktur atau pemasaran
                 </p>
             <?php } ?>
         </div>
