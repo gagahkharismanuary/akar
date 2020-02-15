@@ -19,14 +19,23 @@ class Dashboard extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
       public function __construct(){
-        parent::__construct();
+		parent::__construct();
+		$this->load->model('m_dashboard');
         // Cek apakah terdapat session dengan nama authenticated
         if(! $this->session->userdata('authenticated')) // Jika tidak ada
             redirect('admin'); // Redirect ke halaman login
     }
 	public function index()
 	{
-		$this->load->view('admin/dashboard');
+		// $data['sumProjects'] = $this->m_dashboard->tampil_kota();
+		// $this->load->view('admin/dashboard', $data);
+		// $data['projects'] = $this->m_dashboard->sumProjects();
+		$data['inProgress'] = $this->m_dashboard->inProgress();
+		$data['done'] = $this->m_dashboard->done();
+		$data['pending'] = $this->m_dashboard->pending();
+		$data['canceled'] = $this->m_dashboard->canceled();
+		$data['totalProjects'] = $this->m_dashboard->totalProjects();
+ 		$this->load->view('admin/dashboard', $data);
 	}
 
 	public function blank() {
